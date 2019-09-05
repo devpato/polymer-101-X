@@ -2,9 +2,13 @@
 <html>
   <head>
     <script type="module" src="./elements/my-element.js"></script>
+    <script type="module">
+      import '@polymer/paper-checkbox/paper-checkbox.js';
+    </script>
     <title></title>
   </head>
   <body>
     <my-element feeling="amazing"></my-element>
+    <paper-checkbox checked>Checked</paper-checkbox>
   </body>
 </html>
