@@ -11,13 +11,19 @@ class MyElement extends LitElement {
   }
   render() {
     return html`
-      <!-- template content -->
-      <p>I'm feeling ${this.mood}</p>
-      <slot></slot>
-      <slot name="child"></slot>
-      <slot name="child2"></slot>
-      <br />
-      <paper-checkbox checked>Checked</paper-checkbox>
+      <style>
+        .test {
+          background-color: grey;
+        }
+      </style>
+      <div class="test">
+        <p>I'm feeling ${this.mood}</p>
+        <slot></slot>
+        <slot name="child"></slot>
+        <slot name="child2"></slot>
+        <br />
+        <paper-checkbox checked>Checked</paper-checkbox>
+      </div>
     `;
   }
 }
