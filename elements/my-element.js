@@ -6,13 +6,13 @@ import '@polymer/paper-checkbox/paper-checkbox.js';
 class MyElement extends LitElement {
   static get properties() {
     return {
-      feeling: String
+      mood: String
     };
   }
   render() {
     return html`
       <!-- template content -->
-      <p>I'm feeling ${this.feeling}</p>
+      <p>I'm feeling ${this.mood}</p>
       <paper-checkbox checked>Checked</paper-checkbox>
     `;
   }
