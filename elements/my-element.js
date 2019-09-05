@@ -13,6 +13,10 @@ class MyElement extends LitElement {
     return html`
       <!-- template content -->
       <p>I'm feeling ${this.mood}</p>
+      <slot></slot>
+      <slot name="child"></slot>
+      <slot name="child2"></slot>
+      <br />
       <paper-checkbox checked>Checked</paper-checkbox>
     `;
   }
