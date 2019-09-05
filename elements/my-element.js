@@ -15,6 +15,20 @@ class MyElement extends LitElement {
         .test {
           background-color: grey;
         }
+
+        :host {
+          color: green;
+        }
+
+        paper-checkbox.red {
+          --paper-checkbox-size: 2em;
+          --paper-checkbox-checked-color: var(--paper-red-500);
+          --paper-checkbox-checked-ink-color: var(--paper-red-500);
+          --paper-checkbox-unchecked-color: var(--paper-red-900);
+          --paper-checkbox-unchecked-ink-color: var(--paper-red-900);
+          --paper-checkbox-label-color: var(--paper-red-700);
+          --paper-checkbox-vertical-align: top;
+        }
       </style>
       <div class="test">
         <p>I'm feeling ${this.mood}</p>
@@ -22,7 +36,7 @@ class MyElement extends LitElement {
         <slot name="child"></slot>
         <slot name="child2"></slot>
         <br />
-        <paper-checkbox checked>Checked</paper-checkbox>
+        <paper-checkbox class="red">Checked</paper-checkbox>
       </div>
     `;
   }
