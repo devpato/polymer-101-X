@@ -3,9 +3,18 @@ import { LitElement, html } from 'lit-element';
 
 // Extend the LitElement base class
 class MyElement extends LitElement {
+  static get properties() {
+    return {
+      mood: String
+    };
+  }
+
+  sayHi() {
+    console.log('hi');
+  }
   render() {
     return html`
-      <button>Say Hi</button>
+      <button @click="${this.sayHi}">Say Hi</button>
     `;
   }
 }
