@@ -8,9 +8,16 @@ class MyElement extends LitElement {
       mood: String
     };
   }
+  firstUpdated() {
+    console.log('first rendered');
+    this.addEventListener('sayHello', () => {
+      console.log('Hello');
+    });
+  }
 
   sayHi() {
     console.log('hi');
+    this.dispatchEvent(new CustomEvent('sayHello', { bubbles: true, composed: true }));
   }
   render() {
     return html`
@@ -20,3 +27,8 @@ class MyElement extends LitElement {
 }
 // Register the new element with the browser.
 customElements.define('button-element', MyElement);
+
+// We are setting the following two properties on the CustomEvent:
+
+// bubbles Allows the event to bubble through the DOM.
+// composed Allows bubbling through Shadow DOMs boundary, setting this to true allows the event to be intercepted by the main DOM.
